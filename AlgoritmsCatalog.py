@@ -15,3 +15,23 @@ def prime_number():  # определение простого числа
             print('Введенное число ' + test_number_str + ' - составное')
     except ValueError:
         print('Ошибка, введенно не число')
+
+
+def liner_search():
+    while True:
+        count_array_str = input('Введите длинну массива или stop для выхода: ')
+        if count_array_str == 'stop':
+            break
+        found_num = input('Введите искомое значение: ')
+        try:
+            count_array_int = int(count_array_str)
+            mass = []
+            for i in range(count_array_int):
+                mass.append(input('Введите элемент массива № ' + str(i + 1) + ': '))
+            answer = 'Not found'
+            for j in range(count_array_int):
+                if mass[j] == found_num:
+                    answer = str(j + 1)
+            print('Искомый элемент находится на позиции: ' + answer)
+        except ValueError:
+            print('Не верно введена длинна массива')

@@ -1,19 +1,21 @@
 import AlgoritmsCatalog
 
-algoritms = {1: 'Простое число'}  # Словарь алгоритмов
+algoritms = {1: 'Простое число', 2: 'Линейный поиск'}  # Словарь алгоритмов
 
 
 def doalgoritm(type_of_algoritm):  # Метод запуска соответсвующего алгоритма
     print('Выбран алгоритм \'' + algoritms[type_of_algoritm] + '\'')
     if type_of_algoritm == 1:  # 1 это алгоритм определения простого число
         AlgoritmsCatalog.prime_number()
+    elif type_of_algoritm == 2:
+        AlgoritmsCatalog.liner_search()
 
 
 while True:
     print('Введите название алгоритма:')
     for key in algoritms:  # Выведем список
         print(key, algoritms[key])
-    print('Для завершения введите \'exit\'')
+    print('Для выхода введите \'exit\'')
     selectAlgoritm = input('#:')
     if selectAlgoritm.lower() == 'exit':
         exit(0)
