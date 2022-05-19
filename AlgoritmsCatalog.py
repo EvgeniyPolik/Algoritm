@@ -17,7 +17,7 @@ def prime_number():  # определение простого числа
         print('Ошибка, введенно не число')
 
 
-def liner_search():
+def liner_search(better):
     while True:
         count_array_str = input('Введите длинну массива или stop для выхода: ')
         if count_array_str == 'stop':
@@ -32,6 +32,9 @@ def liner_search():
             for j in range(count_array_int):
                 if mass[j] == found_num:
                     answer = str(j + 1)
+                    if better:
+                        answer += ' (Улучшенный поиск)';
+                        break
             print('Искомый элемент находится на позиции: ' + answer)
         except ValueError:
             print('Не верно введена длинна массива')

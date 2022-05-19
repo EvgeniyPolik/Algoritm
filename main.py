@@ -1,6 +1,10 @@
 import AlgoritmsCatalog
 
-algoritms = {1: 'Простое число', 2: 'Линейный поиск'}  # Словарь алгоритмов
+algoritms = {
+            1: 'Простое число',
+            2: 'Линейный поиск',
+            3: 'Улучшенный поиск'
+            }  # Словарь алгоритмов
 
 
 def doalgoritm(type_of_algoritm):  # Метод запуска соответсвующего алгоритма
@@ -8,8 +12,9 @@ def doalgoritm(type_of_algoritm):  # Метод запуска соответс�
     if type_of_algoritm == 1:  # 1 это алгоритм определения простого число
         AlgoritmsCatalog.prime_number()
     elif type_of_algoritm == 2:
-        AlgoritmsCatalog.liner_search()
-
+        AlgoritmsCatalog.liner_search(False)
+    elif type_of_algoritm == 3:
+        AlgoritmsCatalog.liner_search(True)
 
 while True:
     print('Введите название алгоритма:')
