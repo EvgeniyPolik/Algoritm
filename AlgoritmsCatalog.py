@@ -38,3 +38,33 @@ def liner_search(better):
             print('Искомый элемент находится на позиции: ' + answer)
         except ValueError:
             print('Не верно введена длинна массива')
+
+def sentinel_liner_search():
+    while True:
+        count_array_str = input('Введите длину массива или stop для выхода: ')
+        if count_array_str == 'stop':
+            break
+        found_num = input('Введите искомое значение: ')
+        try:
+            count_array_int = int(count_array_str)
+            mass = []
+            for i in range(count_array_int):
+                mass.append(input('Введите элемент массива № ' + str(i + 1) + ':'))
+            answer = 'Not found'
+            if mass[len(mass) - 1] == found_num:
+                answer = count_array_str
+            else:
+                last = mass[len(mass) - 1]
+                mass[len(mass) - 1] = found_num
+                i = 0
+                while True:
+                    if mass[i] == found_num:
+                        if i + 1 != count_array_int:
+                            answer = str(i + 1)
+                        break
+                    else:
+                        i += 1
+                mass[len(mass) - 1] = last
+            print('Искомый элемент находится на позиции: ' + answer)
+        except ValueError:
+            print('Неверно ведена длинна массива')

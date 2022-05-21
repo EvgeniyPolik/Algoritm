@@ -3,7 +3,8 @@ import AlgoritmsCatalog
 algoritms = {
             1: 'Простое число',
             2: 'Линейный поиск',
-            3: 'Улучшенный поиск'
+            3: 'Улучшенный линейный поиск',
+            4: 'Сторожевой линейный поиск'
             }  # Словарь алгоритмов
 
 
@@ -15,6 +16,8 @@ def doalgoritm(type_of_algoritm):  # Метод запуска соответс�
         AlgoritmsCatalog.liner_search(False)
     elif type_of_algoritm == 3:
         AlgoritmsCatalog.liner_search(True)
+    elif type_of_algoritm == 4:
+        AlgoritmsCatalog.sentinel_liner_search()
 
 while True:
     print('Введите название алгоритма:')
