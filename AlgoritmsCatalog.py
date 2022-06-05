@@ -1,6 +1,23 @@
 from MakeArray import MakeArray
 
 
+def DoFactorial(n):
+    if n > 0:
+        return n * DoFactorial(n-1)
+    else:
+        return 1
+
+
+def Factorial():
+    number_str = input('Введение числодля определения факторила: ')
+    try:
+        number_int = int(number_str)
+        print(f'Значение факториала для числа {number_int}: ' + str(DoFactorial(number_int)))
+
+    except ValueError:
+        print('Ошибка, введено не число')
+
+
 def prime_number():  # определение простого числа
     test_number_str = input('Введите проверяемое число: ')
     try:
