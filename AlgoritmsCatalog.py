@@ -1,18 +1,18 @@
 from MakeArray import MakeArray
 
 
-def DoFactorial(n):
+def do_factorial(n):
     if n > 0:
-        return n * DoFactorial(n-1)
+        return n * do_factorial(n - 1)
     else:
         return 1
 
 
-def Factorial():
+def factorial():
     number_str = input('Введение числодля определения факторила: ')
     try:
         number_int = int(number_str)
-        print(f'Значение факториала для числа {number_int}: ' + str(DoFactorial(number_int)))
+        print(f'Значение факториала для числа {number_int}: ' + str(do_factorial(number_int)))
 
     except ValueError:
         print('Ошибка, введено не число')
@@ -70,17 +70,19 @@ def sentinel_liner_search():  # Строжевой линейный поиск
             mass[len(mass) - 1] = last
         print('Искомый элемент находится на позиции: ' + answer)
 
-def GetRecursiveLeanerSearch(array, i, found_item):
+
+def get_recursive_leaner_search(array, i, found_item):
     if i == len(array):
         return "Not found"
     elif array[i] == found_item:
         return i + 1
     else:
         i += 1
-        return GetRecursiveLeanerSearch(array, i, found_item)
+        return get_recursive_leaner_search(array, i, found_item)
 
-def DoRecursiveLeanerSearch():
+
+def do_recursive_leaner_search():
     found_item, mass = MakeArray()
     if found_item != 'stop':
-        answer = GetRecursiveLeanerSearch(mass, 0, found_item)
+        answer = get_recursive_leaner_search(mass, 0, found_item)
         print(f'Искомый элемент находится на позиции: {answer}')

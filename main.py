@@ -21,9 +21,10 @@ def doalgoritm(type_of_algoritm):  # Метод запуска соответс�
     elif type_of_algoritm == 4:
         AlgoritmsCatalog.sentinel_liner_search()
     elif type_of_algoritm == 5:
-        AlgoritmsCatalog.Factorial()
+        AlgoritmsCatalog.factorial()
     elif type_of_algoritm == 6:
-        AlgoritmsCatalog.DoRecursiveLeanerSearch()
+        AlgoritmsCatalog.do_recursive_leaner_search()
+
 
 while True:
     print('Введите название алгоритма:')
