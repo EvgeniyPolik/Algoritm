@@ -69,3 +69,18 @@ def sentinel_liner_search():  # Строжевой линейный поиск
                 answer = str(i + 1)
             mass[len(mass) - 1] = last
         print('Искомый элемент находится на позиции: ' + answer)
+
+def GetRecursiveLeanerSearch(array, i, found_item):
+    if i == len(array):
+        return "Not found"
+    elif array[i] == found_item:
+        return i + 1
+    else:
+        i += 1
+        return GetRecursiveLeanerSearch(array, i, found_item)
+
+def DoRecursiveLeanerSearch():
+    found_item, mass = MakeArray()
+    if found_item != 'stop':
+        answer = GetRecursiveLeanerSearch(mass, 0, found_item)
+        print(f'Искомый элемент находится на позиции: {answer}')
